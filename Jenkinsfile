@@ -1,10 +1,5 @@
 pipeline {
     agent { label 'jenkins-slave' }
-	  environment {
-		  registry = 'naresh240/springboot-k8s:latest'
-		  registryCredentials = 'docker-credentials'
-		  dockerImage = ''
-	  }
     stages {
         stage ('SCM') {
             steps {
@@ -12,7 +7,7 @@ pipeline {
                 	branches: [[name: '*/main']], doGenerateSubmoduleConfigurations: false, 
                 	extensions: [], 
                 	submoduleCfg: [], 
-                	userRemoteConfigs: [[url: 'https://github.com/Naresh240/minikube-springbootCICD.git']]])
+                	userRemoteConfigs: [[url: 'https://github.com/Naresh240/Jenkins-Master-Slave.git']]])
             }
         }
         stage ('Build Artifact') {
